@@ -21,6 +21,13 @@ jobs:
         run: |
           pip install requests beautifulsoup4 pytz
 
+                - name: Restore alert state
+        uses: actions/cache@v4
+        with:
+          path: alerted_today.txt
+          key: bus-alert-${{ github.run_id }}
+          restore-keys: bus-alert-
+
       - name: Run bus checker
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
