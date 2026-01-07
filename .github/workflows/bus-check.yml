@@ -34,3 +34,9 @@ jobs:
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
           python bot.py
+
+                - name: Save alert state
+        uses: actions/cache@v4
+        with:
+          path: alerted_today.txt
+          key: bus-alert-${{ github.run_id }}
