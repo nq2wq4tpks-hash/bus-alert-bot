@@ -2,7 +2,7 @@ name: Bus Alert Checker
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/8 * * * *"
   workflow_dispatch:
 
 jobs:
