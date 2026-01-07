@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install requests beautifulsoup4 pytz
 
-                - name: Restore alert state
+      - name: Restore alert state
         uses: actions/cache@v4
         with:
           path: alerted_today.txt
@@ -35,7 +35,7 @@ jobs:
         run: |
           python bot.py
 
-                - name: Save alert state
+      - name: Save alert state
         uses: actions/cache@v4
         with:
           path: alerted_today.txt
